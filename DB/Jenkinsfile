@@ -37,6 +37,7 @@ pipeline {
                             sh "cat DB/database.yml"
                             sleep(time: 10, unit: 'SECONDS')
                             sh 'echo "Deploying MongoDB Manifest"'
+                            sh "kubectl create namespace three-tier"
                             sh "kubectl apply -f DB/database.yml --validate=false"
                             sh "kubectl get pods -n three-tier"
                             sh "kubectl get svc -n three-tier"
