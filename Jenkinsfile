@@ -6,7 +6,7 @@ pipeline {
     environment {
         KUBECONFIG_CREDENTIAL_ID = 'k8s-kubeconfig-dev'
         version = "backend_${env.BUILD_NUMBER}"
-        docker_image = "persevcareers6577/perseverance-project:${version}"
+        docker_image = "neeru1416/three-tier:${version}"
     }
 
     stages {
