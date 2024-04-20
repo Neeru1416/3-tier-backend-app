@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/persevcareers/Project-Final-Backend.git'
+                git branch: 'main', url: 'https://github.com/neeru1416/three-tier-Backend.git'
             }
         }
 
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     def dockerfilePath = '.'
-                   sh "sudo docker build -t 'persevcareers6577/perseverance-project:${version}' ."
+                   sh "sudo docker build -t 'neeru1416/three-tier:${version}' ."
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    sh "sudo docker push 'persevcareers6577/perseverance-project:${version}'"
+                    sh "sudo docker push 'neeru1416/three-tier:${version}'"
                 }
             }
         } 
